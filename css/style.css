@@ -1,0 +1,2508 @@
+/* =================================
+   1. CONFIGURAÇÕES GERAIS
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #080B12;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =================================
+   2. CABEÇALHO
+================================= */
+
+
+/* 44. HEADER PRINCIPAL */
+
+.site-header {
+    width: 100%;
+    padding: 20px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(13, 17, 27, 0.92);
+    border-bottom: 1px solid rgba(22, 139, 255, 0.15);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    transition: 0.3s ease;
+}
+
+/* 45. IDENTIDADE PROTEC */
+
+/* 45. IDENTIDADE VISUAL PROTEC */
+
+.logo {
+    margin: 0;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+
+
+/* 45.1 — SÍMBOLO PROTEC CYBER REFINED */
+
+.logo-symbol {
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+    flex-shrink: 0;
+    display: block;
+    filter: drop-shadow(0 0 5px rgba(22, 139, 255, 0.25));
+}
+
+/* LETRA P METÁLICA */
+/* PROCESSADOR INTEGRADO */
+.logo-chip {
+    position: absolute;
+    z-index: 3;
+    width: 10px;
+    height: 10px;
+    top: 20px;
+    left: 36px;
+    background: #168BFF;
+    border: 1px solid #DCEBFA;
+    border-radius: 1px;
+    box-shadow: 0 0 7px rgba(22, 139, 255, 0.8);
+}
+
+.logo-chip span {
+    position: absolute;
+    inset: 3px;
+    background: #071426;
+}
+
+/* CIRCUITO SUPERIOR */
+.circuit {
+    position: absolute;
+    z-index: 1;
+    right: -1px;
+    width: 13px;
+    height: 1px;
+    background: #168BFF;
+    box-shadow: 0 0 4px rgba(22, 139, 255, 0.8);
+}
+
+.circuit-top {
+    top: 13px;
+}
+
+.circuit-top::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -5px;
+    width: 6px;
+    height: 5px;
+    border-top: 1px solid #168BFF;
+    border-right: 1px solid #168BFF;
+}
+
+/* CIRCUITO INFERIOR */
+.circuit-bottom {
+    bottom: 13px;
+}
+
+.circuit-bottom::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    width: 6px;
+    height: 5px;
+    border-bottom: 1px solid #168BFF;
+    border-right: 1px solid #168BFF;
+}
+
+/* PONTO DE CONEXÃO */
+.circuit-dot {
+    display: none;
+}
+
+/* INTERAÇÃO */
+.logo-link:hover .logo-letter {
+    filter: drop-shadow(0 0 4px rgba(22, 139, 255, 0.35));
+}
+
+
+/* ENERGIA PULSANTE */
+@keyframes cyberPulse {
+    from {
+        opacity: 0.55;
+        box-shadow: 0 0 4px #168BFF;
+    }
+
+    to {
+        opacity: 1;
+        box-shadow:
+            0 0 8px #FFFFFF,
+            0 0 18px #168BFF,
+            0 0 28px #168BFF;
+    }
+}
+
+/* REAÇÃO AO MOUSE */
+
+
+/* NOME PROTEC */
+
+.logo-name {
+    color: #FFFFFF;
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 1;
+    animation: protecCharge 1.5s ease 2s infinite;
+}
+
+.logo-name .logo-letter {
+    display: inline-block;
+    color: #FFFFFF;
+}
+
+.logo-name .logo-letter.accent {
+    color: #168BFF;
+}
+
+.logo-name small {
+    display: block;
+    margin-top: 6px;
+    font-size: 7px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #A8B0C0;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+
+.logo-link:hover .logo-letter {
+    text-shadow: 0 0 20px #168BFF;
+}
+
+.logo-link:hover .logo-chip {
+    box-shadow: 0 0 20px #168BFF;
+}
+
+.logo-link:hover .circuit {
+    box-shadow: 0 0 13px #168BFF;
+}
+
+.logo-link:hover .circuit {
+    box-shadow: 0 0 13px #168BFF;
+}
+
+/* 61. AJUSTE DA LOGO PROTEC */
+
+
+.logo a:hover img {
+    filter: drop-shadow(0 0 8px rgba(22, 139, 255, 0.5));
+}
+
+/* 46. MENU DE NAVEGAÇÃO */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-link {
+    position: relative;
+    color: #A8B0C0;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 0;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* LINHA NEON */
+.nav-link {
+    display: inline-block;
+}
+
+/* LINHA NEON */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 0;
+    height: 2px;
+    background: #168BFF;
+    box-shadow: 0 0 8px #168BFF, 0 0 15px rgba(22, 139, 255, 0.7);
+    transition: width 0.35s ease;
+}
+
+/* INTERAÇÃO */
+.nav-link:hover,
+.nav-link.active {
+    color: #FFFFFF;
+    text-shadow: 0 0 10px rgba(22, 139, 255, 0.65);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+
+.nav-link:hover {
+    color: #FFFFFF;
+    text-shadow: 0 0 12px rgba(22, 139, 255, 0.5);
+}
+
+/* LINHA AZUL ABAIXO DOS LINKS */
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: #168BFF;
+    box-shadow: 0 0 10px #168BFF;
+
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* LINK SELECIONADO */
+
+.nav-link.active {
+    color: #FFFFFF;
+}
+
+
+/* =================================
+   5. CONTEÚDO PRINCIPAL
+================================= */
+
+main {
+    width: 100%;
+    padding: 40px 8%;
+}
+
+section {
+    padding: 80px 0;
+}
+
+section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+section p {
+    color: #A8B0C0;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* =================================
+   6. RODAPÉ
+================================= */
+
+footer {
+    padding: 30px;
+    text-align: center;
+
+    background-color: #0D111B;
+    color: #A8B0C0;
+}
+
+/* =================================
+   7. RESPONSIVIDADE
+================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 25px 5%;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    main {
+        padding: 20px 5%;
+    }
+
+    section {
+        padding: 50px 0;
+    }
+
+    section h2 {
+        font-size: 28px;
+    }
+
+    section p {
+        font-size: 15px;
+    }
+
+}
+
+/* =================================
+   8. HERO SECTION
+================================= */
+
+.hero {
+    min-height: 75vh;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero-tag {
+    display: inline-block;
+
+    color: #168BFF;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+}
+
+.hero h2 {
+    font-size: clamp(40px, 6vw, 76px);
+    line-height: 1.1;
+
+    max-width: 850px;
+    margin-bottom: 25px;
+}
+
+.hero h2 span {
+    color: #168BFF;
+}
+
+.hero p {
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+
+/* =================================
+   9. BOTÕES DA HERO
+================================= */
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.hero-buttons a {
+    display: inline-block;
+
+    padding: 15px 25px;
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background-color: #168BFF;
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: #006DDA;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    border: 1px solid #168BFF;
+    color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+    background-color: #168BFF;
+    transform: translateY(-3px);
+}
+
+
+/* =================================
+   10. AJUSTES PARA CELULAR
+================================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 70vh;
+    }
+
+    .hero-tag {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+/* =================================
+   11. EFEITO DE ILUMINAÇÃO
+================================= */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background: radial-gradient(circle,
+            rgba(22, 139, 255, 0.16) 0%,
+            rgba(22, 139, 255, 0) 70%);
+
+    top: 50%;
+    right: 5%;
+
+    transform: translateY(-50%);
+
+    pointer-events: none;
+}
+
+/* Mantém o conteúdo acima da iluminação */
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* =================================
+   12. ELEMENTO VISUAL DA HERO
+================================= */
+
+.hero-visual {
+    position: absolute;
+
+    right: 8%;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 380px;
+    height: 380px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-circle {
+    width: 100%;
+    height: 100%;
+
+    border: 1px solid rgba(22, 139, 255, 0.5);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 0 30px rgba(22, 139, 255, 0.12),
+        inset 0 0 30px rgba(22, 139, 255, 0.08);
+}
+
+.hero-inner-circle {
+    width: 75%;
+    height: 75%;
+
+    border: 1px solid rgba(22, 139, 255, 0.3);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: radial-gradient(circle,
+            rgba(22, 139, 255, 0.12),
+            transparent 70%);
+}
+
+.hero-inner-circle span {
+    color: #168BFF;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.hero-inner-circle small {
+    color: #A8B0C0;
+    font-size: 10px;
+    letter-spacing: 5px;
+    margin-top: 8px;
+}
+
+
+/* =================================
+   13. AJUSTE DO ELEMENTO NO CELULAR
+================================= */
+
+@media (max-width: 768px) {
+
+    .hero-visual {
+        display: none;
+    }
+
+}
+
+/* =================================
+   14. ANIMAÇÃO DO CÍRCULO
+================================= */
+
+.hero-circle {
+    position: relative;
+}
+
+/* Anima somente o contorno externo */
+
+.hero-circle::before {
+    content: "";
+
+    position: absolute;
+    inset: -1px;
+
+    border: 1px solid rgba(22, 139, 255, 0.5);
+    border-radius: 50%;
+
+    animation: rotateCircle 20s linear infinite;
+}
+
+@keyframes rotateCircle {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =================================
+   15. ACESSIBILIDADE
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-circle {
+        animation: none;
+    }
+
+}
+
+/* =================================
+   16. DETALHES ORBITAIS
+================================= */
+
+
+/* =================================
+   16. ÓRBITAS DOS MARCADORES
+================================= */
+
+/* Ponto azul na órbita externa */
+
+.hero-circle::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    border-radius: 50%;
+
+    background: radial-gradient(circle at 50% 0%,
+            #168BFF 0px,
+            #168BFF 6px,
+            transparent 7px);
+
+    filter: drop-shadow(0 0 8px #168BFF);
+
+    animation: rotateCircle 8s linear infinite;
+}
+
+
+/* Ponto branco na órbita interna */
+
+.hero-inner-circle::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    border-radius: 50%;
+
+    background: radial-gradient(circle at 50% 0%,
+            #FFFFFF 0px,
+            #FFFFFF 4px,
+            transparent 5px);
+
+    filter: drop-shadow(0 0 8px #168BFF);
+
+    animation: rotateCircle 5s linear infinite reverse;
+}
+
+/* =================================
+   17. SEÇÃO SOBRE MIM
+================================= */
+
+.about {
+    min-height: 80vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 100px 0;
+}
+
+.about-content {
+    max-width: 900px;
+}
+
+/* Identificação da seção */
+
+.section-tag {
+    display: inline-block;
+
+    color: #168BFF;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+}
+
+/* Título */
+
+.about h2 {
+    max-width: 850px;
+
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.2;
+
+    margin-bottom: 30px;
+}
+
+.about h2 span {
+    display: block;
+    color: #168BFF;
+}
+
+/* Textos */
+
+.about p {
+    max-width: 750px;
+
+    color: #A8B0C0;
+    font-size: 17px;
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+}
+
+
+/* =================================
+   18. RESPONSIVIDADE SOBRE MIM
+================================= */
+
+@media (max-width: 768px) {
+
+    .about {
+        min-height: auto;
+        padding: 80px 0;
+    }
+
+    .about h2 {
+        font-size: 32px;
+    }
+
+    .about p {
+        font-size: 15px;
+    }
+
+}
+
+/* =================================
+   19. ORGANIZAÇÃO DA SEÇÃO ABOUT
+================================= */
+
+.about {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+/* =================================
+   20. GRADE DE HABILIDADES
+================================= */
+
+.skills {
+    width: 100%;
+    max-width: 1100px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+    margin-top: 60px;
+}
+
+
+/* =================================
+   21. CARDS DE HABILIDADES
+================================= */
+
+.skill-card {
+    padding: 30px;
+
+    background: #0D111B;
+
+    border: 1px solid rgba(22, 139, 255, 0.15);
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #168BFF;
+
+    box-shadow: 0 10px 35px rgba(22, 139, 255, 0.12);
+}
+
+.skill-card span {
+    color: #168BFF;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.skill-card h3 {
+    color: #FFFFFF;
+    font-size: 22px;
+
+    margin: 20px 0 12px;
+}
+
+.skill-card p {
+    color: #A8B0C0;
+    font-size: 14px;
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+
+/* =================================
+   22. RESPONSIVIDADE DOS CARDS
+================================= */
+
+@media (max-width: 768px) {
+
+    .skills {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 40px;
+    }
+
+    .skill-card {
+        padding: 25px;
+    }
+
+}
+
+/* =================================
+   23. ETIQUETAS DE TECNOLOGIA
+================================= */
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+.skill-tags span {
+    display: inline-block;
+
+    padding: 7px 11px;
+
+    background-color: rgba(22, 139, 255, 0.08);
+
+    border: 1px solid rgba(22, 139, 255, 0.25);
+    border-radius: 5px;
+
+    color: #168BFF;
+    font-size: 11px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.skill-tags span:hover {
+    background-color: rgba(22, 139, 255, 0.2);
+    border-color: #168BFF;
+
+    transform: translateY(-3px);
+}
+
+/* =================================
+   24. CABEÇALHO DOS PROJETOS
+================================= */
+
+.projects-header {
+    max-width: 750px;
+    margin-bottom: 55px;
+}
+
+.section-label {
+    color: #168BFF;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.projects-header h2 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.projects-header h2 span {
+    color: #168BFF;
+}
+
+.projects-header p {
+    max-width: 600px;
+    color: #A8B0C0;
+    line-height: 1.8;
+}
+
+
+/* =================================
+   25. GRADE DE PROJETOS
+================================= */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* =================================
+   26. CARDS DE PROJETOS
+================================= */
+
+.project-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 30px;
+
+    min-height: 340px;
+
+    background: #0D111B;
+
+    border: 1px solid rgba(22, 139, 255, 0.18);
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.01);
+
+    border-color: #168BFF;
+
+    background: linear-gradient(145deg,
+            #111B2B,
+            #0D111B 70%);
+
+    box-shadow:
+        0 20px 50px rgba(22, 139, 255, 0.16),
+        0 0 20px rgba(22, 139, 255, 0.08),
+        inset 0 0 20px rgba(22, 139, 255, 0.03);
+}
+
+
+/* =================================
+   27. INFORMAÇÕES DOS PROJETOS
+================================= */
+
+.project-number {
+    color: #168BFF;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.project-card h3 {
+    color: #FFFFFF;
+    font-size: 23px;
+    margin: 25px 0 15px;
+}
+
+.project-card p {
+    color: #A8B0C0;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =================================
+   28. TECNOLOGIAS DOS PROJETOS
+================================= */
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: auto;
+    padding-top: 25px;
+}
+
+.project-tags span {
+    padding: 7px 10px;
+
+    background: rgba(22, 139, 255, 0.08);
+
+    border: 1px solid rgba(22, 139, 255, 0.25);
+    border-radius: 5px;
+
+    color: #168BFF;
+    font-size: 11px;
+}
+
+
+/* =================================
+   29. STATUS DOS PROJETOS
+================================= */
+
+.project-status {
+    margin-top: 20px;
+
+    color: #A8B0C0;
+    font-size: 12px;
+}
+
+
+/* =================================
+   30. RESPONSIVIDADE
+================================= */
+
+@media (max-width: 900px) {
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-header h2 {
+        font-size: 32px;
+    }
+
+}
+
+/* 31. IMAGENS DOS PROJETOS */
+/* 31. IMAGENS DOS PROJETOS */
+.project-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: block;
+
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* 32. EFEITO DE ZOOM E BRILHO */
+.project-card:hover .project-image {
+    transform: scale(1.04);
+    filter: brightness(1.15) drop-shadow(0 0 8px rgba(22, 139, 255, 0.45));
+}
+
+/* 33. ANIMAÇÃO DE ENTRADA DOS PROJETOS */
+
+.project-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.project-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 34. BOTÕES DE DETALHES DOS PROJETOS */
+
+.project-details-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: fit-content;
+    margin-top: 25px;
+    padding: 12px 20px;
+
+    background: rgba(22, 139, 255, 0.08);
+    border: 1px solid rgba(22, 139, 255, 0.5);
+    border-radius: 6px;
+
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.project-details-btn:hover {
+    background: #168BFF;
+    border-color: #168BFF;
+
+    box-shadow:
+        0 0 15px rgba(22, 139, 255, 0.35),
+        0 0 30px rgba(22, 139, 255, 0.15);
+
+    transform: translateY(-3px);
+}
+
+.project-details-btn:active {
+    transform: scale(0.97);
+}
+
+/* 36. CAPA DA JANELA DE PROJETOS */
+
+.dialog-cover {
+    width: 100%;
+    height: 230px;
+    margin-top: 30px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid rgba(22, 139, 255, 0.25);
+}
+
+.dialog-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.dialog-category {
+    display: inline-block;
+    margin-top: 25px;
+    color: #168BFF;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* 37. SEÇÕES DE INFORMAÇÕES */
+
+.dialog-section {
+    margin-top: 30px;
+}
+
+.dialog-section h3 {
+    color: #FFFFFF;
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.dialog-section p,
+.dialog-section li {
+    color: #A8B0C0;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.dialog-section ul {
+    padding-left: 20px;
+}
+
+.dialog-section li {
+    margin-bottom: 7px;
+}
+
+/* 38. LINKS DOS PROJETOS */
+
+.dialog-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.dialog-link {
+    padding: 12px 18px;
+    border: 1px solid rgba(22, 139, 255, 0.5);
+    border-radius: 6px;
+    color: #168BFF;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.dialog-link:hover {
+    background: rgba(22, 139, 255, 0.12);
+    box-shadow: 0 0 15px rgba(22, 139, 255, 0.2);
+}
+
+.dialog-link-primary {
+    background: #168BFF;
+    color: #FFFFFF;
+}
+
+.dialog-link-primary:hover {
+    background: #0875DF;
+}
+
+/* 39. JANELA DE DETALHES DOS PROJETOS */
+
+.project-dialog {
+    width: min(650px, 90%);
+    max-height: 85vh;
+    padding: 0;
+    background: #0D111B;
+    color: #FFFFFF;
+    border: 1px solid rgba(22, 139, 255, 0.5);
+    border-radius: 16px;
+    box-shadow:
+        0 0 40px rgba(22, 139, 255, 0.15),
+        0 20px 80px rgba(0, 0, 0, 0.6);
+    overflow: auto;
+    margin: auto;
+}
+
+.project-dialog[open] {
+    animation: dialogAppear 0.35s ease;
+}
+
+.project-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+}
+
+/* CONTEÚDO INTERNO */
+
+.project-dialog-content {
+    position: relative;
+    padding: 45px;
+}
+
+.project-dialog-content h2 {
+    margin: 25px 0 15px;
+    font-size: clamp(26px, 4vw, 36px);
+    color: #FFFFFF;
+}
+
+.project-dialog-content p {
+    color: #A8B0C0;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* BOTÃO FECHAR */
+
+.project-dialog-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+    background: rgba(22, 139, 255, 0.08);
+    border: 1px solid rgba(22, 139, 255, 0.3);
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.project-dialog-close:hover {
+    background: #168BFF;
+    box-shadow: 0 0 18px rgba(22, 139, 255, 0.4);
+    transform: rotate(90deg);
+}
+
+/* ANIMAÇÃO */
+
+@keyframes dialogAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 600px) {
+    .project-dialog-content {
+        padding: 35px 25px;
+    }
+}
+
+/* 40. SCROLL PERSONALIZADO DA JANELA */
+
+.project-dialog {
+    scrollbar-width: thin;
+    scrollbar-color: #168BFF #0D111B;
+}
+
+.project-dialog::-webkit-scrollbar {
+    width: 7px;
+}
+
+.project-dialog::-webkit-scrollbar-track {
+    background: #0D111B;
+    border-radius: 10px;
+}
+
+.project-dialog::-webkit-scrollbar-thumb {
+    background: #168BFF;
+    border-radius: 10px;
+}
+
+.project-dialog::-webkit-scrollbar-thumb:hover {
+    background: #45A5FF;
+}
+
+/* 41. ETIQUETAS DE TECNOLOGIAS */
+
+.dialog-tech {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.dialog-tech span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    background: rgba(22, 139, 255, 0.10);
+    border: 1px solid rgba(22, 139, 255, 0.35);
+    border-radius: 8px;
+    color: #45A5FF;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    transition: 0.3s ease;
+}
+
+.dialog-tech span:hover {
+    background: rgba(22, 139, 255, 0.2);
+    border-color: #168BFF;
+    box-shadow: 0 0 12px rgba(22, 139, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* 42. ACABAMENTO DAS SEÇÕES DA JANELA */
+
+.dialog-section {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(22, 139, 255, 0.18);
+}
+
+.dialog-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #FFFFFF;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    letter-spacing: 0.3px;
+}
+
+.dialog-section p,
+.dialog-section li {
+    color: #A8B0C0;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.dialog-section ul {
+    padding-left: 20px;
+}
+
+.dialog-section li {
+    padding-left: 5px;
+    margin-bottom: 8px;
+}
+
+.dialog-section li::marker {
+    color: #168BFF;
+}
+
+/* 43. ANIMAÇÕES INTERNAS DA JANELA */
+
+/* Entrada da imagem */
+.dialog-cover {
+    animation: coverReveal 0.7s ease both;
+}
+
+@keyframes coverReveal {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Entrada das informações */
+.dialog-category,
+.project-dialog-content h2,
+.project-dialog-content>p,
+.dialog-section {
+    animation: contentReveal 0.6s ease both;
+}
+
+.dialog-category {
+    animation-delay: 0.1s;
+}
+
+.project-dialog-content h2 {
+    animation-delay: 0.18s;
+}
+
+.project-dialog-content>p {
+    animation-delay: 0.25s;
+}
+
+.dialog-section:nth-of-type(1) {
+    animation-delay: 0.32s;
+}
+
+.dialog-section:nth-of-type(2) {
+    animation-delay: 0.42s;
+}
+
+.dialog-section:nth-of-type(3) {
+    animation-delay: 0.52s;
+}
+
+@keyframes contentReveal {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Entrada das etiquetas de tecnologia */
+.dialog-tech span {
+    animation: tagReveal 0.4s ease both;
+}
+
+.dialog-tech span:nth-child(1) {
+    animation-delay: 0.35s;
+}
+
+.dialog-tech span:nth-child(2) {
+    animation-delay: 0.45s;
+}
+
+.dialog-tech span:nth-child(3) {
+    animation-delay: 0.55s;
+}
+
+.dialog-tech span:nth-child(4) {
+    animation-delay: 0.65s;
+}
+
+@keyframes tagReveal {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* 48. MENU MOBILE */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 42px;
+    height: 42px;
+    padding: 8px;
+    background: transparent;
+    border: 1px solid rgba(22, 139, 255, 0.25);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #168BFF;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+/* 49. RESPONSIVIDADE DO HEADER */
+@media (max-width: 768px) {
+
+    .site-header {
+        padding: 16px 6%;
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0 8%;
+        background: rgba(13, 17, 27, 0.97);
+        border-bottom: 1px solid rgba(22, 139, 255, 0.2);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+    }
+
+    .main-nav.open {
+        max-height: 300px;
+        padding: 12px 8% 20px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-link {
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link::after {
+        bottom: 5px;
+    }
+
+    /* Animação do botão */
+    .menu-toggle.open span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.open span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* 51. ANIMAÇÃO DE ENTRADA DAS SEÇÕES */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 53. ANIMAÇÕES INTERNAS DOS CARDS */
+
+.project-card .project-image,
+.project-card .project-number,
+.project-card h3,
+.project-card p,
+.project-card .project-tags,
+.project-card .project-details-btn,
+.project-card .project-status {
+    opacity: 0;
+    transform: translateY(15px);
+    animation: projectContentReveal 0.6s ease forwards;
+}
+
+.project-card.show .project-image {
+    animation-delay: 0.15s;
+}
+
+.project-card.show .project-number {
+    animation-delay: 0.25s;
+}
+
+.project-card.show h3 {
+    animation-delay: 0.35s;
+}
+
+.project-card.show p {
+    animation-delay: 0.45s;
+}
+
+.project-card.show .project-tags {
+    animation-delay: 0.55s;
+}
+
+.project-card.show .project-details-btn {
+    animation-delay: 0.65s;
+}
+
+.project-card.show .project-status {
+    animation-delay: 0.75s;
+}
+
+@keyframes projectContentReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 54. CORREÇÃO DO ALINHAMENTO DA RODA PROTEC */
+
+.hero-visual.reveal {
+    transform: translateY(calc(-50% + 35px));
+}
+
+.hero-visual.reveal.visible {
+    transform: translateY(-50%);
+}
+
+/* 55. SEÇÃO DE CONTATO */
+
+.contact {
+    position: relative;
+    padding: 120px 8%;
+    background: #080B12;
+    overflow: hidden;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-header {
+    max-width: 750px;
+    margin: 0 auto 70px;
+    text-align: center;
+}
+
+.contact-header h2 {
+    font-size: 46px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.contact-header h2 span {
+    color: #168BFF;
+    text-shadow: 0 0 20px rgba(22, 139, 255, 0.35);
+}
+
+.contact-header p {
+    color: #A8B0C0;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* 56. CARDS DE CONTATO */
+
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.contact-card {
+    padding: 35px 28px;
+    background: #0D111B;
+    border: 1px solid rgba(22, 139, 255, 0.18);
+    border-radius: 14px;
+    transition: 0.35s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(22, 139, 255, 0.7);
+    box-shadow: 0 10px 35px rgba(22, 139, 255, 0.12);
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(22, 139, 255, 0.12);
+    border: 1px solid rgba(22, 139, 255, 0.3);
+    border-radius: 12px;
+    color: #168BFF;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.contact-card h3 {
+    color: #FFFFFF;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.contact-card p {
+    color: #A8B0C0;
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 48px;
+    margin-bottom: 22px;
+}
+
+.contact-card a {
+    color: #168BFF;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.contact-card a:hover {
+    color: #FFFFFF;
+    text-shadow: 0 0 12px #168BFF;
+}
+
+/* 57. FORMULÁRIO DE CONTATO */
+
+.contact-form-container {
+    max-width: 850px;
+    margin: 90px auto 0;
+    padding: 45px;
+    background: #0D111B;
+    border: 1px solid rgba(22, 139, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form-header {
+    margin-bottom: 35px;
+}
+
+.contact-form-header h3 {
+    color: #FFFFFF;
+    font-size: 28px;
+    margin: 15px 0 10px;
+}
+
+.contact-form-header p {
+    color: #A8B0C0;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px 17px;
+    background: #080B12;
+    border: 1px solid rgba(22, 139, 255, 0.2);
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #697386;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #168BFF;
+    box-shadow: 0 0 15px rgba(22, 139, 255, 0.12);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-submit {
+    align-self: flex-start;
+    padding: 15px 28px;
+    background: #168BFF;
+    border: 1px solid #168BFF;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact-submit:hover {
+    background: transparent;
+    box-shadow: 0 0 25px rgba(22, 139, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+/* 58. RESPONSIVIDADE DA SEÇÃO DE CONTATO */
+
+@media (max-width: 768px) {
+    .contact {
+        padding: 90px 6%;
+    }
+
+    .contact-header h2 {
+        font-size: 36px;
+    }
+
+    .contact-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-form-container {
+        padding: 30px 24px;
+        margin-top: 65px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-header h2 {
+        font-size: 30px;
+    }
+
+    .contact-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-container {
+        padding: 25px 18px;
+    }
+
+    .contact-form-header h3 {
+        font-size: 23px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-submit {
+        width: 100%;
+    }
+}
+
+/* 60. STATUS DO FORMULÁRIO */
+
+.form-status {
+    display: none;
+    padding: 15px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+
+.form-status.success {
+    display: block;
+    color: #4ADE80;
+    background: rgba(74, 222, 128, 0.08);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    animation: statusAppear 0.4s ease;
+}
+
+.form-status.error {
+    display: block;
+    color: #FF6B6B;
+    background: rgba(255, 107, 107, 0.08);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    animation: statusAppear 0.4s ease;
+}
+
+.contact-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+@keyframes statusAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TESTE DE LIMPEZA DO SÍMBOLO */
+
+/* 55. EFEITO DE ENERGIA PROTEC */
+
+/* Permite posicionar o feixe sobre o logo */
+.logo-link {
+    position: relative;
+    overflow: visible;
+}
+
+/* Feixe de energia atravessando o nome */
+
+/* Energia passando pelo nome */
+
+/* Animação do feixe */
+@keyframes energyBeam {
+    0% {
+        opacity: 0;
+        transform: translateX(-120%);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(350%);
+    }
+}
+
+/* As letras recebem a energia */
+@keyframes logoCharge {
+
+    0%,
+    20% {
+        filter: brightness(1);
+        text-shadow: none;
+    }
+
+    45% {
+        filter: brightness(1.8);
+        text-shadow: 0 0 8px #168BFF, 0 0 18px #168BFF;
+    }
+
+    70% {
+        filter: brightness(1.4);
+        text-shadow: 0 0 12px rgba(22, 139, 255, 0.7);
+    }
+
+    100% {
+        filter: brightness(1);
+        text-shadow: none;
+    }
+}
+
+/* Brilho adicional ao passar o mouse */
+.logo-link:hover .logo-name {
+    filter: brightness(1.3);
+    text-shadow: 0 0 10px rgba(22, 139, 255, 0.65);
+}
+
+/* ACESSIBILIDADE - REDUÇÃO DE MOVIMENTO */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-circle::before,
+    .hero-circle::after,
+    .hero-inner-circle::after {
+        animation: none !important;
+    }
+}
+
+
+/* 62. IDENTIDADE VISUAL PROTEC */
+
+.logo-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s ease;
+    isolation: isolate;
+}
+
+/* SÍMBOLO P */
+.logo-symbol {
+    position: relative;
+    z-index: 2;
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+    flex-shrink: 0;
+    display: block;
+    filter: drop-shadow(0 0 5px rgba(22, 139, 255, 0.3));
+    transition: filter 0.4s ease;
+}
+
+/* NOME */
+.logo-name {
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF;
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 1;
+    transition: filter 0.3s ease;
+    animation: protecCharge 1.5s ease 0.7s 1 both;
+}
+
+.logo-name>span {
+    color: #168BFF;
+    text-shadow: 0 0 12px rgba(22, 139, 255, 0.5);
+}
+
+.logo-name small {
+    display: block;
+    margin-top: 6px;
+    font-size: 7px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #A8B0C0;
+}
+
+/* FEIXE DE ENERGIA */
+.logo-link::after {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    left: 66px;
+    top: 50%;
+    width: calc(100% - 66px);
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent,
+            #168BFF 25%,
+            #FFFFFF 50%,
+            #168BFF 75%,
+            transparent);
+    box-shadow: 0 0 8px #168BFF, 0 0 16px #168BFF;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-120%);
+    animation: protecEnergy 1.5s ease 2s infinite;
+}
+
+/* ANIMAÇÃO INICIAL */
+@keyframes protecEnergy {
+    0% {
+        opacity: 0;
+        transform: translateX(-120%);
+    }
+
+    20%,
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(350%);
+    }
+}
+
+@keyframes protecCharge {
+
+    0%,
+    100% {
+        filter: brightness(1);
+        text-shadow: none;
+    }
+
+    50% {
+        filter: brightness(2);
+        text-shadow: 0 0 8px #168BFF, 0 0 18px #168BFF;
+    }
+}
+
+/* BRILHO AO PASSAR O MOUSE */
+@keyframes protecHoverCharge {
+
+    0%,
+    100% {
+        filter: brightness(1);
+        text-shadow: none;
+    }
+
+    50% {
+        filter: brightness(2.2);
+        text-shadow:
+            0 0 8px #168BFF,
+            0 0 18px #168BFF,
+            0 0 30px rgba(22, 139, 255, 0.9);
+    }
+}
+
+/* INTERAÇÃO */
+.logo-link:hover .logo-symbol {
+    filter: drop-shadow(0 0 12px rgba(22, 139, 255, 0.8));
+}
+
+.logo-link:hover .logo-name {
+    animation: protecHoverCharge 1.5s ease 0s 1 both;
+}
+
+.logo-link:hover::after {
+    animation: protecEnergyHover 1.5s ease 0s 1 both;
+}
+
+@keyframes protecEnergyHover {
+    0% {
+        opacity: 0;
+        transform: translateX(-120%);
+    }
+
+    20%,
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(350%);
+    }
+}
+
+/* ACESSIBILIDADE */
+@media (prefers-reduced-motion: reduce) {
+
+    .logo-link::after,
+    .logo-name {
+        animation: none;
+    }
+}
+
+/* ENERGIZAÇÃO INDIVIDUAL DAS LETRAS */
+.logo-link:hover .logo-letter {
+    animation: letterEnergy 0.8s ease both;
+}
+
+.logo-link:hover .logo-letter:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.logo-link:hover .logo-letter:nth-child(2) {
+    animation-delay: 0.12s;
+}
+
+.logo-link:hover .logo-letter:nth-child(3) {
+    animation-delay: 0.24s;
+}
+
+.logo-link:hover .logo-letter:nth-child(4) {
+    animation-delay: 0.36s;
+}
+
+.logo-link:hover .logo-letter:nth-child(5) {
+    animation-delay: 0.48s;
+}
+
+.logo-link:hover .logo-letter:nth-child(6) {
+    animation-delay: 0.60s;
+}
+
+@keyframes letterEnergy {
+
+    0%,
+    100% {
+        filter: brightness(1);
+        text-shadow: none;
+    }
+
+    50% {
+        filter: brightness(2.5);
+        text-shadow:
+            0 0 8px #168BFF,
+            0 0 18px #168BFF,
+            0 0 28px rgba(22, 139, 255, 0.9);
+    }
+}
+
+/* 63. RODAPÉ PROTEC */
+
+.site-footer {
+    position: relative;
+    padding: 65px 8% 25px;
+    background: #080B12;
+    border-top: 1px solid rgba(22, 139, 255, 0.2);
+    overflow: hidden;
+}
+
+
+/* BRILHO AZUL DO RODAPÉ */
+
+.site-footer::before {
+    content: "";
+    position: absolute;
+    top: -130px;
+    left: 50%;
+    width: 500px;
+    height: 260px;
+    background: radial-gradient(ellipse,
+            rgba(22, 139, 255, 0.16) 0%,
+            rgba(22, 139, 255, 0.06) 45%,
+            transparent 75%);
+    filter: blur(45px);
+    transform: translateX(-50%);
+    pointer-events: none;
+    animation: footerGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes footerGlow {
+    from {
+        opacity: 0.5;
+        transform: translateX(-50%) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.15);
+    }
+}
+
+.footer-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* LOGO PROTEC NO RODAPÉ */
+
+.footer-logo {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.footer-logo-symbol {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 7px rgba(22, 139, 255, 0.35));
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.footer-logo-name {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.footer-logo-name small {
+    color: #168BFF;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.footer-logo:hover .footer-logo-symbol {
+    filter: drop-shadow(0 0 13px rgba(22, 139, 255, 0.85));
+    transform: scale(1.06);
+}
+
+.footer-brand p {
+    max-width: 340px;
+    margin-top: 18px;
+    color: #A8B0C0;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.footer-navigation,
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.footer-navigation h3,
+.footer-social h3 {
+    margin-bottom: 8px;
+    color: #FFFFFF;
+    font-size: 15px;
+}
+
+.footer-navigation a,
+.footer-social a {
+    position: relative;
+    display: inline-block;
+    color: #A8B0C0;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer-navigation a:hover,
+.footer-social a:hover {
+    color: #168BFF;
+    transform: translateX(6px);
+    text-shadow: 0 0 10px rgba(22, 139, 255, 0.5);
+}
+
+.footer-bottom {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 55px auto 0;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: #7F899B;
+    font-size: 11px;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 25px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-footer {
+        padding: 50px 6% 25px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 15px;
+    }
+
+    .footer-bottom {
+        font-size: 10px;
+    }
+}
+
+/* ANIMAÇÃO DOS BLOCOS DO RODAPÉ */
+
+.footer-brand.reveal {
+    transition-delay: 0.1s;
+}
+
+.footer-navigation.reveal {
+    transition-delay: 0.25s;
+}
+
+.footer-social.reveal {
+    transition-delay: 0.4s;
+}
+/* AJUSTE MOBILE — JANELA DE PROJETOS */
+@media (max-width: 600px) {
+    .project-dialog {
+        width: calc(100% - 24px);
+        max-width: 420px;
+        max-height: 82dvh;
+        margin: auto;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        border-radius: 12px;
+        overscroll-behavior: contain;
+    }
+
+    .project-dialog-content {
+        padding: 60px 18px 25px;
+        box-sizing: border-box;
+    }
+
+    .dialog-cover {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .dialog-cover img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+/* CENTRALIZAÇÃO E LIMITE DE LARGURA DO CONTEÚDO */
+main {
+    width: 100%;
+    max-width: 1600px;
+    margin-inline: auto;
+    padding-inline: clamp(24px, 5vw, 80px);
+}
